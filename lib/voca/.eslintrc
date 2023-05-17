@@ -1,0 +1,33 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true,
+    "mocha": true,
+    "browser": true
+  },
+  "plugins": [
+
+  ],
+  "rules": {
+    "valid-jsdoc": "error",
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "brace-style": ["error", "1tbs"],
+    "camelcase": ["error", {"properties": "never"}],
+    "comma-spacing": ["error", {"before": false, "after": true}],
+    "comma-style": ["error", "last"],
+    "space-before-blocks": ["error", { "functions": "always", "keywords": "always", "classes": "always" }],
+    "semi": ["error", "always"],
+    "no-undef": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "no-const-assign": "error",
+    "one-var": ["error", "never"],
+    "sort-imports": ["error", {
+      "ignoreCase": true,
+      "ignoreMemberSort": false,
+      "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+    }],
+    "no-control-regex": "off"
+  }
+}

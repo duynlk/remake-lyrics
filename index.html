@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>Remake Tool - Vangson.info</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		<link rel="stylesheet" href="lib/bulma/css/bulma-rtl.min.css">
+		<link rel="stylesheet" href="lib/toastr/build/toastr.min.css">
+		<link rel="stylesheet" href="custom/style.css">
+
+		<script src="lib/fontawesome/js/all.min.js"></script>
+		<script src="lib/jquery/jquery-3.6.4.min.js"></script>
+		<script src="lib/voca/dist/voca.min.js"></script>
+		<script src="lib/toastr/build/toastr.min.js"></script>
+		<script src="custom/script.js"></script>
+	</head>
+
+	<body>
+		<div class="container is-widescreen">
+			<!-- header -->
+			<h1 class="title mt-4">
+				REMAKE TOOL FOR VANGSON.INFO
+			</h1>
+
+			<div class="columns is-desktop">
+				<div class="column is-6">
+					<div class="control mb-1">
+						<label class="radio mr-3">
+							<input type="radio" name="mode" value="lyric" checked>
+							Lyrics
+						</label>
+						<label class="radio">
+							<input type="radio" name="mode" value="content">
+							Content
+						</label><br>
+						<input id="input-title" class="input" type="text" placeholder="Title" style="display: none;">
+					</div>
+					<textarea id="input-lyric" class="textarea" placeholder="Input" rows="19"></textarea>
+				</div>
+
+				<div class="column is-1">
+					<button id="btn-remake" class="button is-info mb-3">
+						<i class="fa-solid fa-arrows-rotate"></i>
+					</button>
+					<button id="btn-copy" class="button is-success mb-3">
+						<i class="fa-regular fa-copy"></i>
+					</button><br>
+					<button id="btn-clear-input" class="button is-light mb-3">
+						<i class="fa-solid fa-arrow-left"></i>
+					</button><br>
+					<button id="btn-clear-output" class="button is-light mb-5">
+						<i class="fa-solid fa-arrow-right"></i>
+					</button>
+				</div>
+
+				<div class="column is-5">
+					<textarea id="output-lyric" class="textarea" placeholder="Output" rows="20" readonly></textarea>
+				</div>
+			</div>
+
+			<!-- footer -->
+			<div>
+				Remake Tool | <a href="https://vangson.info" target="_blank">vangson.info</a> &copy; 2023
+			</div>
+		</div>
+	</body>
+</html>
