@@ -42,10 +42,8 @@ $(document).ready(function(){
 	$("#btn-copy").click(function(){
 		var outputLyric = $("#output-lyric").val();
 		if(outputLyric != "") {
-			$("#output-lyric").css('background-color', '#303026');
 			setTimeout(function(){
 				navigator.clipboard.writeText($("#output-lyric").val());
-				$("#output-lyric").css('background-color', '#1c1c1c');
 			}, 200);
 			toastr.success('Output is copied');
 		}else{
@@ -64,10 +62,8 @@ $(document).ready(function(){
 				output = handleRemakeContent(input);
 			}
 
-			$("#output-lyric").css('background-color', '#303026');
 			setTimeout(function(){
 				$("#output-lyric").val(output);
-				$("#output-lyric").css('background-color', '#1c1c1c');
 			}, 200);
 
 			toastr.success('Remake done');
