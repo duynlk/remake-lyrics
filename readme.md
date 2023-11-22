@@ -1,3 +1,3 @@
 Make the smooth lyrics/contents for https://vangson.info
 
-![image](https://github.com/duynlk/remake-lyrics/assets/16206786/00dadb8c-57b9-49d1-a96b-f2c3e53369bb)
+![image](https://github.com/duynlk/remake-lyrics/assets/16206786/ae371b10-a343-481d-a9d0-5229bc03ffd7)
