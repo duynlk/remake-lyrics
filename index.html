@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="custom/style.css">
 
 		<script src="lib/fontawesome/js/all.min.js"></script>
-		<script src="lib/jquery/jquery-3.6.4.min.js"></script>
+		<script src="lib/jquery/jquery.min.js"></script>
 		<script src="lib/voca/dist/voca.min.js"></script>
 		<script src="lib/toastr/build/toastr.min.js"></script>
 		<script src="custom/script.js"></script>
@@ -25,18 +25,7 @@
 
 			<div class="columns is-desktop">
 				<div class="column is-6">
-					<div class="control mb-1">
-						<label class="radio mr-3">
-							<input type="radio" name="mode" value="lyric" checked>
-							Lyrics
-						</label>
-						<label class="radio">
-							<input type="radio" name="mode" value="content">
-							Content
-						</label><br>
-						<input id="input-title" class="input" type="text" placeholder="Title" style="display: none;">
-					</div>
-					<textarea id="input-lyric" class="textarea" placeholder="Input: Editable" rows="19"></textarea>
+					<textarea id="input-lyric" class="textarea" placeholder="Input: Editable" rows="20"></textarea>
 				</div>
 
 				<div class="column is-1">
@@ -47,10 +36,10 @@
 						<i class="fa-regular fa-copy"></i>
 					</button><br>
 					<button id="btn-clear-input" class="button is-danger mb-3">
-						<i class="fa-solid fa-arrow-left"></i>
+						<i class="fa-solid fa-delete-left"></i>
 					</button><br>
 					<button id="btn-clear-output" class="button is-danger mb-5">
-						<i class="fa-solid fa-arrow-right"></i>
+						<i class="fa-solid fa-delete-left" style="transform: rotate(180deg);"></i>
 					</button>
 				</div>
 

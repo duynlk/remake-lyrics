@@ -2,20 +2,6 @@ toastr.options.preventDuplicates = true;
 
 $(document).ready(function(){
 
-	// mode default
-	var mode = "lyric";
-
-	// click radio mode
-	$("input[name='mode']").click(function(){
-		mode = $('input[name="mode"]:checked').val();
-
-		if (mode == "content") {
-			$("#input-title").show(500);
-		}else{
-			$("#input-title").hide(500);
-		}
-	});
-
 	// click button clear input
 	$("#btn-clear-input").click(function(){
 		var input = $("#input-lyric").val();
@@ -55,12 +41,7 @@ $(document).ready(function(){
 	$("#btn-remake").click(function(){
 		var input = $("#input-lyric").val();
 		if(input != "") {
-			var output = "";
-			if(mode == "lyric") {
-				output = handleRemakeLyric(input);
-			} else {
-				output = handleRemakeContent(input);
-			}
+			var output = handleRemakeLyric(input);
 
 			setTimeout(function(){
 				$("#output-lyric").val(output);
@@ -132,15 +113,5 @@ $(document).ready(function(){
 			strVal += str[chr].substring(0, 1).toUpperCase() + str[chr].substring(1, str[chr].length) + ' ';
 		}
 		return strVal.substring(0, strVal.length - 1);
-	}
-
-	function handleRemakeContent(input) {
-		var title = $("#input-title").val();
-		var output = "";
-
-		newTitle = capitalize(title);
-		output = v.replaceAll(input, title, newTitle);
-
-		return output;
 	}
 });
