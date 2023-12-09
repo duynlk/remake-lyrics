@@ -3,24 +3,12 @@ toastr.options.preventDuplicates = true;
 $(document).ready(function(){
 
 	// click button clear input
-	$("#btn-clear-input").click(function(){
+	$("#btn-clear").click(function(){
 		var input = $("#input-lyric").val();
 		if(input != "") {
 			$("#input-lyric").val("");
-			toastr.success('Input is cleared');
-		}else{
-			toastr.error('Input is null');
-		}
-	});
-
-	// click button clear output
-	$("#btn-clear-output").click(function(){
-		var outputLyric = $("#output-lyric").val();
-		if(outputLyric != "") {
 			$("#output-lyric").val("");
-			toastr.success('Output is cleared');
-		}else{
-			toastr.error('Output is null');
+			toastr.success('Cleared your content');
 		}
 	});
 
@@ -50,13 +38,20 @@ $(document).ready(function(){
 	// scroll input-lyric
 	$("#input-lyric").on("scroll", function(){
 		if($("#sync-chk").is(":checked")){
-			syncScroll();
+			syncScrollOutput();
+		}
+	});
+
+	// scroll output-lyric
+	$("#output-lyric").on("scroll", function(){
+		if($("#sync-chk").is(":checked")){
+			syncScrollInput();
 		}
 	});
 
 	// click sync checkbox
 	$("#sync-chk").click(function(){
-		syncScroll();
+		syncScrollOutput();
 	});
 
 	function handleRemakeLyric(input) {
@@ -121,8 +116,13 @@ $(document).ready(function(){
 		return strVal.substring(0, strVal.length - 1);
 	}
 
-	function syncScroll() {
+	function syncScrollOutput() {
 		var scrollPos = $("#input-lyric").scrollTop();
 		$("#output-lyric").scrollTop(scrollPos);
+	}
+
+	function syncScrollInput() {
+		var scrollPos = $("#output-lyric").scrollTop();
+		$("#input-lyric").scrollTop(scrollPos);
 	}
 });
