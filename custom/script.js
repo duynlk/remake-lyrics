@@ -37,20 +37,26 @@ $(document).ready(function(){
 		}
 	});
 
-	// click button remake
-	$("#btn-remake").click(function(){
+	// change input-lyric
+	$("#input-lyric").on("input", function(){
 		var input = $("#input-lyric").val();
-		if(input != "") {
-			var output = handleRemakeLyric(input);
+		var output = handleRemakeLyric(input);
 
-			setTimeout(function(){
-				$("#output-lyric").val(output);
-			}, 200);
+		setTimeout(function(){
+			$("#output-lyric").val(output);
+		}, 200);
+	});
 
-			toastr.success('Remake done');
-		}else{
-			toastr.error('Input is null');
+	// scroll input-lyric
+	$("#input-lyric").on("scroll", function(){
+		if($("#sync-chk").is(":checked")){
+			syncScroll();
 		}
+	});
+
+	// click sync checkbox
+	$("#sync-chk").click(function(){
+		syncScroll();
 	});
 
 	function handleRemakeLyric(input) {
@@ -113,5 +119,10 @@ $(document).ready(function(){
 			strVal += str[chr].substring(0, 1).toUpperCase() + str[chr].substring(1, str[chr].length) + ' ';
 		}
 		return strVal.substring(0, strVal.length - 1);
+	}
+
+	function syncScroll() {
+		var scrollPos = $("#input-lyric").scrollTop();
+		$("#output-lyric").scrollTop(scrollPos);
 	}
 });
